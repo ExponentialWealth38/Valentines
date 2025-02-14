@@ -1,0 +1,175 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background: url('heart.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #FF6B6B;
+  margin: 0;
+  padding: 0;
+}
+
+body::after {
+  content: ''; /* Create an empty pseudo-element */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Adjust opacity here to control dimming */
+  z-index: -1; /* Keeps the overlay behind the content */
+}
+
+.container {
+  max-width: 600px;
+  height: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 200px;
+}
+
+.letter {
+  font-size: 1rem;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.9); /* Background inside the letter section */
+  padding: 30px; /* Padding inside the letter to create space between text and edges */
+  padding-top: -100px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Ensuring the letter content is centered */
+  text-align: center;
+}
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #f34e4e;
+}
+
+h3{
+  color: #e72424;
+}
+
+.highlight {
+  color: #FF3366;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #FF6B6B;
+}
+
+footer p {
+  margin: 0;
+}
+
+.images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.image {
+  display: block;
+  position: absolute;
+  width: 230px; /* Adjust image size */
+  height: 230px; /* Adjust image size */
+  border: 5px solid #FF6B6B; /* White border around images */
+  border-radius: 8px; /* Optional, for rounded corners */
+  transform: rotate(15deg); /* Tilt the images */
+}
+
+.image1 {bottom: 390px; left: 150px;  }
+.image2 { bottom: 390px; right: 150px; transform: rotate(-15deg); }
+.image3 { bottom: -390px; left: 150px; transform: rotate(10deg); }
+.image4 { bottom: -390px; right: 150px; transform: rotate(-10deg); }
+.image5 { bottom: 20px; left: 80px; transform: rotate(5deg); }
+.image6 { bottom: 20px; right: 80px; transform: rotate(-5deg); }
+
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .letter {
+    font-size: 1.1rem; /* Adjust font size for readability on smaller screens */
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Adjust the header font size */
+  }
+
+  footer {
+    font-size: 1rem; /* Adjust footer font size */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Adjust header font size for very small screens */
+  }
+
+  .letter {
+    font-size: 1rem; /* Adjust font size for readability on very small screens */
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 0.9rem; /* Adjust footer font size */
+  } 
+}
+
+.slideshow {
+  display: none;
+  position: relative;
+  width: 230px; /* Same size as the images */
+  height: 230px;
+  border: 5px solid #FF6B6B;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px auto; /* Center the slideshow below the letter */
+}
+
+.slide {
+  position: absolute;
+  width: 100%; /* Full width of the slideshow container */
+  height: 100%;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire frame without distortion */
+  border-radius: 8px;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+.slide.prev {
+  transform: translateX(-100%);
+}
+
+@media (max-width: 1200px) {
+  .images {
+    display: none;
+  }
+  
+  .slideshow {
+    display: block;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine’s Day Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Images around the letter -->
+  <div class="images">
+    <img src="fun.jpg" class="image image1" alt="Image 1">
+    <img src="kiss.jpg" class="image image2" alt="Image 2">
+    <img src="shoulder.jpg" class="image image3" alt="Image 3">
+    <img src="christmas.JPG" class="image image4" alt="Image 4">
+    <img src="graduation.jpg" class="image image5" alt="Image 5">
+    <img src="mirror.jpg" class="image image6" alt="Image 6">
+  </div>
+
+  <div class="container">
+    <section class="letter">
+      <header>
+        <h1>Happy Valentine’s Day, <span class="highlight">Queen Riri</span>!</h1>
+        <h3>Colossians 3:14</h3>
+      </header>
+
+      <p>
+        My Boo,  
+        <br><br>
+        I just want to say how much I appreciate all the memories of love we’ve shared. You’ve filled my life with joy, laughter, and so much love, and I’m truly grateful for that.  
+        <br><br>
+        Keep being you, boo keep pushing forward in everything you strive for. I’m excited to see where God takes us in this life journey and how far we’ll grow together spiritually, physically, and mentally.  
+        <br><br>
+        <strong>With love and God’s blessings, Brandon</strong>  
+      </p>
+
+      <footer>
+        <p>I love you forever. Happy Valentine’s Day. ❤️</p>
+      </footer>
+    </section>
+
+    <!-- Slideshow for mobile view -->
+  <div class="slideshow">
+    <div class="slide-track">
+      <div class="slide"><img src="fun.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="kiss.jpg" alt="Image 2"></div>
+      <div class="slide"><img src="shoulder.jpg" alt="Image 3"></div>
+      <div class="slide"><img src="christmas.jpg" alt="Image 4"></div>
+      <div class="slide"><img src="graduation.jpg" alt="Image 5"></div>
+      <div class="slide"><img src="mirror.jpg" alt="Image 6"></div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev');
+        if (i === index) {
+          slide.classList.add('active');
+        } else if (i === (index - 1 + slides.length) % slides.length) {
+          slide.classList.add('prev');
+        }
+      });
+    }
+  
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+  
+    setInterval(nextSlide, 5000); // Change slide every 3 seconds
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>
