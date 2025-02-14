@@ -18,6 +18,24 @@ body::after {
   z-index: -1; /* Keeps the overlay behind the content */
 }
 
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background: white;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #f34e4e;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: white;
+} 
 .container {
   max-width: 600px;
   height: 800px;
