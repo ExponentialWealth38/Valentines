@@ -85,12 +85,13 @@ footer p {
   transform: rotate(15deg); /* Tilt the images */
 }
 
-.image1 {bottom: 390px; left: 150px;  }
-.image2 { bottom: 390px; right: 150px; transform: rotate(-15deg); }
-.image3 { bottom: -390px; left: 150px; transform: rotate(10deg); }
-.image4 { bottom: -390px; right: 150px; transform: rotate(-10deg); }
-.image5 { bottom: 20px; left: 80px; transform: rotate(5deg); }
-.image6 { bottom: 20px; right: 80px; transform: rotate(-5deg); }
+.image1 {bottom: 390px; left: 135px;  }
+.image2 { bottom: 390px; right: 135px; transform: rotate(-15deg); }
+.image3 { bottom: -410px; left: 150px; transform: rotate(10deg); }
+.image4 { bottom: -410px; right: 150px; transform: rotate(-10deg); }
+.image5 { bottom: -10px; left: 80px; transform: rotate(5deg); }
+.image6 { bottom: -10px; right: 80px; transform: rotate(-5deg); }
+
 
 /* Media Queries for Mobile and Tablet */
 @media (max-width: 768px) {
